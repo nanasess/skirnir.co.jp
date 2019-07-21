@@ -5,6 +5,9 @@ body {
   background-size: cover;
   -o-background-size: cover;
 }
+a, a:hover {
+    color: white;
+}
 
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
