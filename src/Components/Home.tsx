@@ -8,7 +8,7 @@ class Home extends React.Component {
                 <Container>
                     <Row>
                         <Col lg={12}>
-                            <h1 className="mt-5 text-right">E-Commerce Specialist</h1>
+                            <h1 className="mt-5 text-left">E-Commerce Specialist</h1>
                             <p>&nbsp;</p>
                         </Col>
                     </Row>
