@@ -10,9 +10,18 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
+- task: UseNode@1
+  inputs:
+    checkLatest: true
+
+- script: |
+    npm install
+    npm run build
+  displayName: 'npm install and build'
+
 - task: ArchiveFiles@2
   inputs:
-    rootFolderOrFile: '$(Build.SourcesDirectory)'
+    rootFolderOrFile: '$(Build.SourcesDirectory)/build'
     includeRootFolder: false
     archiveType: 'zip'
     archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildNumber).zip'
