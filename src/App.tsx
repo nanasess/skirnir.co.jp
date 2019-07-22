@@ -1,6 +1,5 @@
-import { createBrowserHistory } from 'history';
 import * as React from 'react';
-import { Route, Router } from "react-router-dom";
+import { HashRouter as Router, Route } from "react-router-dom";
 import './App.css';
 import About from './Components/About';
 import Contact from './Components/Contact';
@@ -13,9 +12,8 @@ import background1 from './Images/background1.jpg';
 
 class App extends React.Component {
     public render() {
-        const history = createBrowserHistory();
         return (
-            <Router history={history}>
+            <Router>
                 <div className="App" data-background={background1}>
                     <Navigation />
                     <Route exact={true} path='/' component={Home} />
