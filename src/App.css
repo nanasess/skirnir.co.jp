@@ -29,6 +29,19 @@ a, a:hover {
   font-size: large;
 }
 
+ul.sns_icons {
+    display: inline;
+    padding-left: 0;
+}
+ul.sns_icons > li {
+    display: inline;
+    list-style: none;
+    padding-right: 5px;
+}
+ul.sns_icons > li img {
+    width: 30px;
+    height: 30px;
+}
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
