@@ -15,13 +15,15 @@ class Contact extends React.Component {
                         <Col lg={12}>
                             <h1 className="mt-5 text-left">Contact</h1>
                             <p>SNS にてお気軽にご連絡ください。</p>
-                            <p style={{verticalAlign: 'middle'}}>
-                                <a href="https://fb.me/nanasess"><img src={fb} style={{width: '30px', height: '30px'}} /></a>&nbsp;
-            <a href="https://twitter.com/nanasess"><img src={twitter} style={{width: '30px', height: '30px'}} /></a>&nbsp;
-            <img src={line} style={{width: '30px', height: '30px'}} />&nbsp;
-            <a href="https://instagram.com/nanasess"><img src={instagram} style={{width: '30px', height: '30px'}} /></a>&nbsp;
-            <a href="https://github.com/nanasess"><img src={github} style={{width: '30px', height: '30px'}} /></a>&nbsp;
-            @nanasess
+                            <p style={{ verticalAlign: 'middle', display: 'table-cell', margin: 0, height: '40px' }}>
+                                <ul className="sns_icons">
+                                    <li><a href="https://fb.me/nanasess"><img src={fb} alt="Facebook" /></a></li>
+                                    <li><a href="https://twitter.com/nanasess"><img src={twitter} alt="Twitter" /></a></li>
+                                    <li><img src={line} alt="LINE" /></li>
+                                    <li><a href="https://instagram.com/nanasess"><img src={instagram} alt="Instagram" /></a></li>
+                                    <li><a href="https://github.com/nanasess"><img src={github} alt="Github" /></a></li>
+                                </ul>
+                                @nanasess
                             </p>
                         </Col>
                     </Row>
