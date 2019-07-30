@@ -17,11 +17,11 @@ class Contact extends React.Component {
                             <p>SNS にてお気軽にご連絡ください。</p>
                             <p style={{ verticalAlign: 'middle', display: 'table-cell', margin: 0, height: '40px' }}>
                                 <ul className="sns_icons">
-                                    <li><a href="https://fb.me/nanasess"><img src={fb} alt="Facebook" /></a></li>
-                                    <li><a href="https://twitter.com/nanasess"><img src={twitter} alt="Twitter" /></a></li>
+                                    <li><a href="https://fb.me/nanasess" target="_blank"><img src={fb} alt="Facebook" /></a></li>
+                                    <li><a href="https://twitter.com/nanasess" target="_blank"><img src={twitter} alt="Twitter" /></a></li>
                                     <li><img src={line} alt="LINE" /></li>
-                                    <li><a href="https://instagram.com/nanasess"><img src={instagram} alt="Instagram" /></a></li>
-                                    <li><a href="https://github.com/nanasess"><img src={github} alt="Github" /></a></li>
+                                    <li><a href="https://instagram.com/nanasess" target="_blank"><img src={instagram} alt="Instagram" /></a></li>
+                                    <li><a href="https://github.com/nanasess" target="_blank"><img src={github} alt="Github" /></a></li>
                                 </ul>
                                 @nanasess
                             </p>
