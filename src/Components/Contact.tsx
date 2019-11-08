@@ -21,7 +21,7 @@ class Contact extends React.Component {
                                     <li><a href="https://twitter.com/nanasess" target="_blank"><img src={twitter} alt="Twitter" /></a></li>
                                     <li><img src={line} alt="LINE" /></li>
                                     <li><a href="https://instagram.com/nanasess" target="_blank"><img src={instagram} alt="Instagram" /></a></li>
-                                    <li><a href="https://github.com/nanasess" target="_blank"><img src={github} alt="Github" /></a></li>
+                                    <li><a href="https://github.com/nanasess" target="_blank"><img src={github} alt="GitHub" /></a></li>
                                 </ul>
                                 @nanasess
                             </p>
