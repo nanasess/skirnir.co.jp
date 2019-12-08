@@ -14,7 +14,7 @@ class Contact extends React.Component {
                     <Row>
                         <Col lg={12}>
                             <h1 className="mt-5 text-left">Contact</h1>
-                            <p>SNS にてお気軽にご連絡ください。</p>
+                            <p>ご連絡は各種SNSにてお気軽にどうぞ。</p>
                             <p style={{ verticalAlign: 'middle', display: 'table-cell', margin: 0, height: '40px' }}>
                                 <ul className="sns_icons">
                                     <li><a href="https://fb.me/nanasess" target="_blank"><img src={fb} alt="Facebook" /></a></li>
