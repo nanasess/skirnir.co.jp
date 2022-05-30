@@ -6,6 +6,7 @@ import Contact from './Components/Contact';
 import Home from './Components/Home';
 import Navigation from './Components/Navigation';
 import Services from './Components/Services';
+import TradeLaw from './Components/TradeLaw';
 import background1 from './Images/background1.jpg';
 
 /* import logo from './logo.svg'; */
@@ -20,6 +21,7 @@ class App extends React.Component {
                     <Route path='/about' component={About} />
                     <Route path='/services' component={Services} />
                     <Route path='/contact' component={Contact} />
+                    <Route path='/tradelaw' component={TradeLaw} />
                 </div>
             </Router>
         );

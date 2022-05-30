@@ -36,6 +36,11 @@ class Navigation extends React.Component<any, {}> {
                                     Contact
                                 </NavLink>
                             </Nav.Item>
+                            <Nav.Item as="li">
+                                <NavLink to="/tradelaw" className="nav-link">
+                                    Tradelaw
+                                </NavLink>
+                            </Nav.Item>
                         </Nav>
                     </Navbar.Collapse>
                 </Container>
