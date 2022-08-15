@@ -22,6 +22,9 @@
     "react-scripts-ts": "^4.0.8",
     "typescript": "^3.7.4"
   },
+  "resolutions": {
+    "@types/react": "^16.9.17"
+  },
   "scripts": {
     "start": "react-scripts-ts start",
     "build": "react-scripts-ts build",
