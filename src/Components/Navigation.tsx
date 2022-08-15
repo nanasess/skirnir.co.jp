@@ -13,12 +13,11 @@ class Navigation extends React.Component<any, {}> {
                     <Navbar.Toggle type="button" area-controls="navbarResponsive">
                         <span className="navbar-toggler-icon" />
                     </Navbar.Toggle>
-                    <Navbar.Collapse id="navbarResponsive">
+                    <Navbar.Collapse id="navbarResponsive" className="justify-content-end">
                         <Nav className="ml-auto" as="ul">
                             <Nav.Item as="li">
                                 <NavLink to="/" className="nav-link">
                                     Home
-                                    <span className="sr-only">(current)</span>
                                 </NavLink>
                             </Nav.Item>
                             <Nav.Item as="li">
