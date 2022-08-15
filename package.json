@@ -6,9 +6,9 @@
     "@types/react-router-dom": "^5.1.3",
     "bootstrap": "^4.4.1",
     "history": "^5.3.0",
-    "react": "^16.12.0",
+    "react": "^18.2.0",
     "react-bootstrap": "^2.5.0",
-    "react-dom": "^16.12.0",
+    "react-dom": "^18.2.0",
     "react-router-bootstrap": "^0.25.0",
     "react-router-dom": "^5.1.2",
     "serialize-javascript": "^3.1.0"
@@ -17,14 +17,11 @@
     "@playwright/test": "^1.25.0",
     "@types/jest": "^24.0.25",
     "@types/node": "^18.7.3",
-    "@types/react": "^16.9.17",
-    "@types/react-dom": "^16.9.4",
+    "@types/react": "^18.0.17",
+    "@types/react-dom": "^18.0.6",
     "handlebars": "^4.7.7",
     "react-scripts-ts": "^4.0.8",
     "typescript": "^3.7.4"
-  },
-  "resolutions": {
-    "@types/react": "^16.9.17"
   },
   "scripts": {
     "start": "react-scripts-ts start",
