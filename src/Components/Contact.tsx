@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import fb from '../Images/FB.png';
 import github from '../Images/GitHub.png';

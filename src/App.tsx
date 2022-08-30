@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { HashRouter, Route, Routes } from "react-router-dom";
 import About from './Components/About';
 import Contact from './Components/Contact';
