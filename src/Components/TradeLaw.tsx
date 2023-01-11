@@ -20,11 +20,11 @@ class TradeLaw extends React.Component {
                                 </tr>
                                 <tr>
                                     <th>所在地</th>
-                                    <td>〒530-0001 大阪市北区梅田1-1-3 29F 1-1-1</td>
+                                    <td>〒543-0033 大阪市天王寺区堂ケ芝1-11-18 8F</td>
                                 </tr>
                                 <tr>
                                     <th>電話番号</th>
-                                    <td>06-4980-2537</td>
+                                    <td>06-7662-9680</td>
                                 </tr>
                                 <tr>
                                     <th>お支払い方法</th>

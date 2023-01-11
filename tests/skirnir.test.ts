@@ -9,7 +9,7 @@ test('homepage has Playwright in title and get started link linking to the intro
   // Click text=About
   await page.locator('text=About').click();
   await expect(page).toHaveURL('/#/about');
-  await expect(page.locator('p >> nth=1')).toContainText('〒530-0001 大阪市北区梅田1-1-3 29F 1-1-1');
+  await expect(page.locator('p >> nth=1')).toContainText('〒543-0033 大阪市天王寺区堂ケ芝1-11-18 8F');
   await expect(page.locator('p >> nth=3')).toContainText('ohkouchi@skirnir.co.jp');
 
   // Click text=Services
