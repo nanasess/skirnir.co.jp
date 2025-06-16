@@ -105,11 +105,14 @@
             height: 150px;
         }
 
-        /* 外枠の装飾リング */
+        /* 外枠の装飾リング - ボーダー込み完全中央配置 */
         .ornate-ring {
             position: absolute;
-            width: 100%;
-            height: 100%;
+            width: calc(100% - 6px); /* border 3px * 2 = 6px */
+            height: calc(100% - 6px);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
             border: 3px solid #d4af37;
             border-radius: 50%;
             box-shadow: 
@@ -130,31 +133,34 @@
 
         .inner-ornate-ring {
             position: absolute;
-            width: 85%;
-            height: 85%;
-            top: 7.5%;
-            left: 7.5%;
+            width: calc(85% - 4px); /* border 2px * 2 = 4px */
+            height: calc(85% - 4px);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
             border: 2px solid rgba(212, 175, 55, 0.8);
             border-radius: 50%;
         }
 
         .detail-ring {
             position: absolute;
-            width: 70%;
-            height: 70%;
-            top: 15%;
-            left: 15%;
+            width: calc(70% - 2px); /* border 1px * 2 = 2px */
+            height: calc(70% - 2px);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
             border: 1px dashed rgba(212, 175, 55, 0.6);
             border-radius: 50%;
         }
 
-        /* 北欧風装飾パターン */
+        /* 北欧風装飾パターン - 完全中央配置 */
         .nordic-pattern {
             position: absolute;
             width: 110%;
             height: 110%;
-            top: -5%;
-            left: -5%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
             opacity: 0.3;
         }
 
@@ -165,13 +171,14 @@
             font-weight: bold;
         }
 
-        /* 中央の複雑なルーンシンボル */
+        /* 中央の複雑なルーンシンボル - 完全中央配置 */
         .complex-rune {
             position: absolute;
             width: 60%;
             height: 60%;
-            top: 20%;
-            left: 20%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
         }
 
         .rune-primary {
@@ -205,13 +212,14 @@
             filter: drop-shadow(0 0 4px rgba(212, 175, 55, 0.8));
         }
 
-        /* 商取引の象徴要素 */
+        /* 商取引の象徴要素 - 完全中央配置 */
         .commerce-symbols {
             position: absolute;
             width: 140%;
             height: 140%;
-            top: -20%;
-            left: -20%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
             pointer-events: none;
             opacity: 0.4;
         }
@@ -316,16 +324,17 @@
             position: absolute;
             width: 130%;
             height: 130%;
-            top: -15%;
-            left: -15%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
             background: radial-gradient(circle, rgba(212, 175, 55, 0.1) 0%, transparent 60%);
             border-radius: 50%;
             animation: breathe 6s ease-in-out infinite;
         }
 
         @keyframes breathe {
-            0%, 100% { opacity: 0.3; transform: scale(1); }
-            50% { opacity: 0.6; transform: scale(1.05); }
+            0%, 100% { opacity: 0.3; transform: translate(-50%, -50%) scale(1); }
+            50% { opacity: 0.6; transform: translate(-50%, -50%) scale(1.05); }
         }
 
         /* レスポンシブ対応 */
@@ -389,36 +398,36 @@
                         <div class="detail-ring"></div>
                         <div class="complex-rune">
                             <svg viewBox="0 0 100 100" style="width: 100%; height: 100%;">
-                                <!-- 外側の菱形フレーム -->
-                                <path d="M50 5 L85 50 L50 95 L15 50 Z" class="rune-secondary" stroke-width="3"/>
-                                <path d="M50 15 L75 50 L50 85 L25 50 Z" class="rune-accent"/>
+                                <!-- 外側の菱形フレーム（中央配置調整） -->
+                                <path d="M50 10 L80 50 L50 90 L20 50 Z" class="rune-secondary" stroke-width="3"/>
+                                <path d="M50 18 L72 50 L50 82 L28 50 Z" class="rune-accent"/>
                                 
-                                <!-- 内部の複雑なGeboルーン -->
-                                <path d="M50 20 L50 80" class="rune-primary" stroke-width="4"/>
-                                <path d="M30 30 L70 30" class="rune-primary" stroke-width="3"/>
-                                <path d="M30 70 L70 70" class="rune-primary" stroke-width="3"/>
+                                <!-- 内部の複雑なGeboルーン（中央配置調整） -->
+                                <path d="M50 25 L50 75" class="rune-primary" stroke-width="4"/>
+                                <path d="M32 35 L68 35" class="rune-primary" stroke-width="3"/>
+                                <path d="M32 65 L68 65" class="rune-primary" stroke-width="3"/>
                                 
-                                <!-- 交差する斜線 -->
-                                <path d="M50 20 L30 30 M50 20 L70 30" class="rune-primary" stroke-width="3"/>
-                                <path d="M30 70 L50 80 M70 70 L50 80" class="rune-primary" stroke-width="3"/>
+                                <!-- 交差する斜線（中央配置調整） -->
+                                <path d="M50 25 L32 35 M50 25 L68 35" class="rune-primary" stroke-width="3"/>
+                                <path d="M32 65 L50 75 M68 65 L50 75" class="rune-primary" stroke-width="3"/>
                                 
-                                <!-- 四方向への延長線 -->
-                                <path d="M50 5 L50 15 M85 50 L75 50 M50 95 L50 85 M15 50 L25 50" class="rune-secondary" stroke-width="2"/>
+                                <!-- 四方向への延長線（中央配置調整） -->
+                                <path d="M50 10 L50 18 M80 50 L72 50 M50 90 L50 82 M20 50 L28 50" class="rune-secondary" stroke-width="2"/>
                                 
-                                <!-- 商取引の象徴 - 内部の複雑な幾何学模様 -->
-                                <path d="M35 35 L65 35 L65 65 L35 65 Z" class="rune-accent" stroke-width="1" fill="rgba(212, 175, 55, 0.1)"/>
-                                <path d="M42 42 L58 42 M42 58 L58 58" class="rune-secondary" stroke-width="2"/>
+                                <!-- 商取引の象徴 - 内部の複雑な幾何学模様（中央配置調整） -->
+                                <path d="M38 38 L62 38 L62 62 L38 62 Z" class="rune-accent" stroke-width="1" fill="rgba(212, 175, 55, 0.1)"/>
+                                <path d="M43 43 L57 43 M43 57 L57 57" class="rune-secondary" stroke-width="2"/>
                                 
-                                <!-- 神聖な中心点と接続点 -->
+                                <!-- 神聖な中心点と接続点（中央配置調整） -->
                                 <circle cx="50" cy="50" r="4" class="mystical-dots"/>
-                                <circle cx="50" cy="20" r="2.5" class="mystical-dots"/>
-                                <circle cx="75" cy="50" r="2.5" class="mystical-dots"/>
-                                <circle cx="50" cy="80" r="2.5" class="mystical-dots"/>
-                                <circle cx="25" cy="50" r="2.5" class="mystical-dots"/>
+                                <circle cx="50" cy="25" r="2.5" class="mystical-dots"/>
+                                <circle cx="72" cy="50" r="2.5" class="mystical-dots"/>
+                                <circle cx="50" cy="75" r="2.5" class="mystical-dots"/>
+                                <circle cx="28" cy="50" r="2.5" class="mystical-dots"/>
                                 
-                                <!-- 細部の装飾線 -->
-                                <path d="M40 25 L60 25 M40 75 L60 75" class="rune-accent" stroke-width="1"/>
-                                <path d="M25 40 L25 60 M75 40 L75 60" class="rune-accent" stroke-width="1"/>
+                                <!-- 細部の装飾線（中央配置調整） -->
+                                <path d="M42 30 L58 30 M42 70 L58 70" class="rune-accent" stroke-width="1"/>
+                                <path d="M30 42 L30 58 M70 42 L70 58" class="rune-accent" stroke-width="1"/>
                             </svg>
                         </div>
                     </div>
@@ -459,36 +468,36 @@
                         <div class="detail-ring"></div>
                         <div class="complex-rune">
                             <svg viewBox="0 0 100 100" style="width: 100%; height: 100%;">
-                                <!-- 外側の菱形フレーム（水平レイアウトと同じ） -->
-                                <path d="M50 5 L85 50 L50 95 L15 50 Z" class="rune-secondary" stroke-width="3"/>
-                                <path d="M50 15 L75 50 L50 85 L25 50 Z" class="rune-accent"/>
+                                <!-- 外側の菱形フレーム（水平レイアウトと同じ、中央配置調整） -->
+                                <path d="M50 10 L80 50 L50 90 L20 50 Z" class="rune-secondary" stroke-width="3"/>
+                                <path d="M50 18 L72 50 L50 82 L28 50 Z" class="rune-accent"/>
                                 
-                                <!-- 内部の複雑なGeboルーン（水平レイアウトと同じ） -->
-                                <path d="M50 20 L50 80" class="rune-primary" stroke-width="4"/>
-                                <path d="M30 30 L70 30" class="rune-primary" stroke-width="3"/>
-                                <path d="M30 70 L70 70" class="rune-primary" stroke-width="3"/>
+                                <!-- 内部の複雑なGeboルーン（水平レイアウトと同じ、中央配置調整） -->
+                                <path d="M50 25 L50 75" class="rune-primary" stroke-width="4"/>
+                                <path d="M32 35 L68 35" class="rune-primary" stroke-width="3"/>
+                                <path d="M32 65 L68 65" class="rune-primary" stroke-width="3"/>
                                 
                                 <!-- 交差する斜線 -->
-                                <path d="M50 20 L30 30 M50 20 L70 30" class="rune-primary" stroke-width="3"/>
-                                <path d="M30 70 L50 80 M70 70 L50 80" class="rune-primary" stroke-width="3"/>
+                                <path d="M50 25 L32 35 M50 25 L68 35" class="rune-primary" stroke-width="3"/>
+                                <path d="M32 65 L50 75 M68 65 L50 75" class="rune-primary" stroke-width="3"/>
                                 
                                 <!-- 四方向への延長線 -->
-                                <path d="M50 5 L50 15 M85 50 L75 50 M50 95 L50 85 M15 50 L25 50" class="rune-secondary" stroke-width="2"/>
+                                <path d="M50 10 L50 18 M80 50 L72 50 M50 90 L50 82 M20 50 L28 50" class="rune-secondary" stroke-width="2"/>
                                 
                                 <!-- 商取引の象徴 - 内部の複雑な幾何学模様 -->
-                                <path d="M35 35 L65 35 L65 65 L35 65 Z" class="rune-accent" stroke-width="1" fill="rgba(212, 175, 55, 0.1)"/>
-                                <path d="M42 42 L58 42 M42 58 L58 58" class="rune-secondary" stroke-width="2"/>
+                                <path d="M38 38 L62 38 L62 62 L38 62 Z" class="rune-accent" stroke-width="1" fill="rgba(212, 175, 55, 0.1)"/>
+                                <path d="M43 43 L57 43 M43 57 L57 57" class="rune-secondary" stroke-width="2"/>
                                 
                                 <!-- 神聖な中心点と接続点 -->
                                 <circle cx="50" cy="50" r="4" class="mystical-dots"/>
-                                <circle cx="50" cy="20" r="2.5" class="mystical-dots"/>
-                                <circle cx="75" cy="50" r="2.5" class="mystical-dots"/>
-                                <circle cx="50" cy="80" r="2.5" class="mystical-dots"/>
-                                <circle cx="25" cy="50" r="2.5" class="mystical-dots"/>
+                                <circle cx="50" cy="25" r="2.5" class="mystical-dots"/>
+                                <circle cx="72" cy="50" r="2.5" class="mystical-dots"/>
+                                <circle cx="50" cy="75" r="2.5" class="mystical-dots"/>
+                                <circle cx="28" cy="50" r="2.5" class="mystical-dots"/>
                                 
                                 <!-- 細部の装飾線 -->
-                                <path d="M40 25 L60 25 M40 75 L60 75" class="rune-accent" stroke-width="1"/>
-                                <path d="M25 40 L25 60 M75 40 L75 60" class="rune-accent" stroke-width="1"/>
+                                <path d="M42 30 L58 30 M42 70 L58 70" class="rune-accent" stroke-width="1"/>
+                                <path d="M30 42 L30 58 M70 42 L70 58" class="rune-accent" stroke-width="1"/>
                             </svg>
                         </div>
                     </div>
@@ -527,36 +536,36 @@
                         <div class="detail-ring"></div>
                         <div class="complex-rune">
                             <svg viewBox="0 0 100 100" style="width: 100%; height: 100%;">
-                                <!-- 外側の菱形フレーム（水平レイアウトと同じ） -->
-                                <path d="M50 5 L85 50 L50 95 L15 50 Z" class="rune-secondary" stroke-width="3"/>
-                                <path d="M50 15 L75 50 L50 85 L25 50 Z" class="rune-accent"/>
+                                <!-- 外側の菱形フレーム（水平レイアウトと同じ、中央配置調整） -->
+                                <path d="M50 10 L80 50 L50 90 L20 50 Z" class="rune-secondary" stroke-width="3"/>
+                                <path d="M50 18 L72 50 L50 82 L28 50 Z" class="rune-accent"/>
                                 
-                                <!-- 内部の複雑なGeboルーン（水平レイアウトと同じ） -->
-                                <path d="M50 20 L50 80" class="rune-primary" stroke-width="4"/>
-                                <path d="M30 30 L70 30" class="rune-primary" stroke-width="3"/>
-                                <path d="M30 70 L70 70" class="rune-primary" stroke-width="3"/>
+                                <!-- 内部の複雑なGeboルーン（水平レイアウトと同じ、中央配置調整） -->
+                                <path d="M50 25 L50 75" class="rune-primary" stroke-width="4"/>
+                                <path d="M32 35 L68 35" class="rune-primary" stroke-width="3"/>
+                                <path d="M32 65 L68 65" class="rune-primary" stroke-width="3"/>
                                 
                                 <!-- 交差する斜線 -->
-                                <path d="M50 20 L30 30 M50 20 L70 30" class="rune-primary" stroke-width="3"/>
-                                <path d="M30 70 L50 80 M70 70 L50 80" class="rune-primary" stroke-width="3"/>
+                                <path d="M50 25 L32 35 M50 25 L68 35" class="rune-primary" stroke-width="3"/>
+                                <path d="M32 65 L50 75 M68 65 L50 75" class="rune-primary" stroke-width="3"/>
                                 
                                 <!-- 四方向への延長線 -->
-                                <path d="M50 5 L50 15 M85 50 L75 50 M50 95 L50 85 M15 50 L25 50" class="rune-secondary" stroke-width="2"/>
+                                <path d="M50 10 L50 18 M80 50 L72 50 M50 90 L50 82 M20 50 L28 50" class="rune-secondary" stroke-width="2"/>
                                 
                                 <!-- 商取引の象徴 - 内部の複雑な幾何学模様 -->
-                                <path d="M35 35 L65 35 L65 65 L35 65 Z" class="rune-accent" stroke-width="1" fill="rgba(212, 175, 55, 0.1)"/>
-                                <path d="M42 42 L58 42 M42 58 L58 58" class="rune-secondary" stroke-width="2"/>
+                                <path d="M38 38 L62 38 L62 62 L38 62 Z" class="rune-accent" stroke-width="1" fill="rgba(212, 175, 55, 0.1)"/>
+                                <path d="M43 43 L57 43 M43 57 L57 57" class="rune-secondary" stroke-width="2"/>
                                 
                                 <!-- 神聖な中心点と接続点 -->
                                 <circle cx="50" cy="50" r="4" class="mystical-dots"/>
-                                <circle cx="50" cy="20" r="2.5" class="mystical-dots"/>
-                                <circle cx="75" cy="50" r="2.5" class="mystical-dots"/>
-                                <circle cx="50" cy="80" r="2.5" class="mystical-dots"/>
-                                <circle cx="25" cy="50" r="2.5" class="mystical-dots"/>
+                                <circle cx="50" cy="25" r="2.5" class="mystical-dots"/>
+                                <circle cx="72" cy="50" r="2.5" class="mystical-dots"/>
+                                <circle cx="50" cy="75" r="2.5" class="mystical-dots"/>
+                                <circle cx="28" cy="50" r="2.5" class="mystical-dots"/>
                                 
                                 <!-- 細部の装飾線 -->
-                                <path d="M40 25 L60 25 M40 75 L60 75" class="rune-accent" stroke-width="1"/>
-                                <path d="M25 40 L25 60 M75 40 L75 60" class="rune-accent" stroke-width="1"/>
+                                <path d="M42 30 L58 30 M42 70 L58 70" class="rune-accent" stroke-width="1"/>
+                                <path d="M30 42 L30 58 M70 42 L70 58" class="rune-accent" stroke-width="1"/>
                             </svg>
                         </div>
                     </div>
