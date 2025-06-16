@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skírnir Inc. - 緻密な高詳細ロゴデザイン</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            margin: 0;
+            padding: 40px;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 25%, #334155 50%, #1e293b 75%, #0f172a 100%);
+            font-family: 'Playfair Display', serif;
+            min-height: 100vh;
+            color: #e2e8f0;
+        }
+
+        .logo-showcase {
+            max-width: 1600px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 60px;
+        }
+
+        .main-title {
+            font-size: 48px;
+            font-weight: 700;
+            text-align: center;
+            background: linear-gradient(135deg, #d4af37 0%, #f7dc6f 50%, #d4af37 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #94a3b8;
+            font-size: 18px;
+            margin-bottom: 50px;
+            font-weight: 400;
+        }
+
+        .logo-variants {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 40px;
+        }
+
+        .variant-card {
+            background: linear-gradient(145deg, rgba(15, 23, 42, 0.9) 0%, rgba(30, 41, 59, 0.8) 100%);
+            border-radius: 20px;
+            padding: 40px;
+            backdrop-filter: blur(20px);
+            border: 2px solid rgba(212, 175, 55, 0.3);
+            box-shadow: 
+                0 25px 50px rgba(0, 0, 0, 0.5),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            position: relative;
+            transition: all 0.4s ease;
+        }
+
+        .variant-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(212, 175, 55, 0.6);
+            box-shadow: 
+                0 35px 70px rgba(0, 0, 0, 0.6),
+                0 0 80px rgba(212, 175, 55, 0.2);
+        }
+
+        .variant-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: #d4af37;
+            margin-bottom: 30px;
+            text-align: center;
+            letter-spacing: 1px;
+        }
+
+        .logo-display {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .logo-display.vertical {
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        /* 緻密なエンブレム */
+        .intricate-emblem {
+            position: relative;
+            width: 120px;
+            height: 120px;
+        }
+
+        .intricate-emblem.large {
+            width: 150px;
+            height: 150px;
+        }
+
+        /* 外枠の装飾リング */
+        .ornate-ring {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border: 3px solid #d4af37;
+            border-radius: 50%;
+            box-shadow: 
+                0 0 20px rgba(212, 175, 55, 0.4),
+                inset 0 0 20px rgba(212, 175, 55, 0.1);
+        }
+
+        .ornate-ring::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            border: 1px solid rgba(212, 175, 55, 0.6);
+            border-radius: 50%;
+        }
+
+        .inner-ornate-ring {
+            position: absolute;
+            width: 85%;
+            height: 85%;
+            top: 7.5%;
+            left: 7.5%;
+            border: 2px solid rgba(212, 175, 55, 0.8);
+            border-radius: 50%;
+        }
+
+        .detail-ring {
+            position: absolute;
+            width: 70%;
+            height: 70%;
+            top: 15%;
+            left: 15%;
+            border: 1px dashed rgba(212, 175, 55, 0.6);
+            border-radius: 50%;
+        }
+
+        /* 北欧風装飾パターン */
+        .nordic-pattern {
+            position: absolute;
+            width: 110%;
+            height: 110%;
+            top: -5%;
+            left: -5%;
+            opacity: 0.3;
+        }
+
+        .pattern-element {
+            position: absolute;
+            color: #d4af37;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        /* 中央の複雑なルーンシンボル */
+        .complex-rune {
+            position: absolute;
+            width: 60%;
+            height: 60%;
+            top: 20%;
+            left: 20%;
+        }
+
+        .rune-primary {
+            stroke: #f3f4f6;
+            fill: none;
+            stroke-width: 3;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            filter: drop-shadow(0 0 8px rgba(243, 244, 246, 0.6));
+        }
+
+        .rune-secondary {
+            stroke: #d4af37;
+            fill: rgba(212, 175, 55, 0.15);
+            stroke-width: 2.5;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            filter: drop-shadow(0 0 6px rgba(212, 175, 55, 0.4));
+        }
+
+        .rune-accent {
+            stroke: #94a3b8;
+            fill: none;
+            stroke-width: 1.5;
+            stroke-linecap: round;
+            opacity: 0.8;
+        }
+
+        .mystical-dots {
+            fill: #d4af37;
+            filter: drop-shadow(0 0 4px rgba(212, 175, 55, 0.8));
+        }
+
+        /* 商取引の象徴要素 */
+        .commerce-symbols {
+            position: absolute;
+            width: 140%;
+            height: 140%;
+            top: -20%;
+            left: -20%;
+            pointer-events: none;
+            opacity: 0.4;
+        }
+
+        .commerce-element {
+            position: absolute;
+            font-size: 14px;
+            color: #d4af37;
+            animation: commerceOrbit 20s linear infinite;
+        }
+
+        .commerce-element:nth-child(1) { top: 15%; left: 50%; animation-delay: 0s; }
+        .commerce-element:nth-child(2) { top: 35%; right: 15%; animation-delay: 4s; }
+        .commerce-element:nth-child(3) { bottom: 35%; right: 50%; animation-delay: 8s; }
+        .commerce-element:nth-child(4) { bottom: 15%; left: 15%; animation-delay: 12s; }
+        .commerce-element:nth-child(5) { top: 50%; left: 10%; animation-delay: 16s; }
+
+        /* タイポグラフィ */
+        .company-text {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .company-text.center {
+            align-items: center;
+            text-align: center;
+        }
+
+        .company-name-intricate {
+            font-family: 'Playfair Display', serif;
+            font-size: 42px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #f3f4f6 0%, #d4af37 30%, #f7dc6f 70%, #d4af37 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: 3px;
+            line-height: 1;
+            margin: 0;
+            position: relative;
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+        }
+
+        .company-name-intricate.large {
+            font-size: 56px;
+            letter-spacing: 4px;
+        }
+
+        .tagline-intricate {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 14px;
+            font-weight: 500;
+            color: #d4af37;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-top: 12px;
+            position: relative;
+        }
+
+        .tagline-intricate.large {
+            font-size: 16px;
+            margin-top: 15px;
+        }
+
+        .tagline-intricate::before,
+        .tagline-intricate::after {
+            content: '◆';
+            color: #d4af37;
+            font-size: 12px;
+            margin: 0 8px;
+        }
+
+        /* 装飾要素 */
+        .decorative-elements {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .corner-ornament {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: linear-gradient(45deg, transparent, #d4af37, transparent);
+            opacity: 0.6;
+        }
+
+        .corner-ornament.top-left { top: 10px; left: 10px; }
+        .corner-ornament.top-right { top: 10px; right: 10px; transform: rotate(90deg); }
+        .corner-ornament.bottom-left { bottom: 10px; left: 10px; transform: rotate(-90deg); }
+        .corner-ornament.bottom-right { bottom: 10px; right: 10px; transform: rotate(180deg); }
+
+        /* アニメーション */
+        @keyframes commerceOrbit {
+            from { transform: rotate(0deg) translateX(60px) rotate(0deg); }
+            to { transform: rotate(360deg) translateX(60px) rotate(-360deg); }
+        }
+
+        .breathing-glow {
+            position: absolute;
+            width: 130%;
+            height: 130%;
+            top: -15%;
+            left: -15%;
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.1) 0%, transparent 60%);
+            border-radius: 50%;
+            animation: breathe 6s ease-in-out infinite;
+        }
+
+        @keyframes breathe {
+            0%, 100% { opacity: 0.3; transform: scale(1); }
+            50% { opacity: 0.6; transform: scale(1.05); }
+        }
+
+        /* レスポンシブ対応 */
+        @media (max-width: 1200px) {
+            .logo-variants {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .logo-display {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .company-text {
+                align-items: center;
+                text-align: center;
+            }
+            
+            .company-name-intricate {
+                font-size: 32px;
+                letter-spacing: 2px;
+            }
+            
+            .main-title {
+                font-size: 36px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="logo-showcase">
+        <div class="main-title">Skírnir Inc.</div>
+        <div class="subtitle">緻密で詳細な高級ロゴデザイン - E-Commerce Specialist</div>
+        
+        <div class="logo-variants">
+            <!-- 緻密な水平レイアウト -->
+            <div class="variant-card">
+                <div class="variant-title">緻密な水平レイアウト - Master Edition</div>
+                <div class="logo-display">
+                    <div class="intricate-emblem large">
+                        <div class="breathing-glow"></div>
+                        <div class="nordic-pattern">
+                            <div class="pattern-element" style="top: 5%; left: 45%;">❋</div>
+                            <div class="pattern-element" style="top: 25%; right: 5%;">❋</div>
+                            <div class="pattern-element" style="bottom: 25%; right: 45%;">❋</div>
+                            <div class="pattern-element" style="bottom: 5%; left: 5%;">❋</div>
+                            <div class="pattern-element" style="top: 50%; left: 2%;">❋</div>
+                            <div class="pattern-element" style="top: 50%; right: 2%;">❋</div>
+                        </div>
+                        <div class="commerce-symbols">
+                            <div class="commerce-element">⚖</div>
+                            <div class="commerce-element">⚜</div>
+                            <div class="commerce-element">◈</div>
+                            <div class="commerce-element">⚛</div>
+                            <div class="commerce-element">✦</div>
+                        </div>
+                        <div class="ornate-ring"></div>
+                        <div class="inner-ornate-ring"></div>
+                        <div class="detail-ring"></div>
+                        <div class="complex-rune">
+                            <svg viewBox="0 0 100 100" style="width: 100%; height: 100%;">
+                                <!-- 外側の菱形フレーム -->
+                                <path d="M50 5 L85 50 L50 95 L15 50 Z" class="rune-secondary" stroke-width="3"/>
+                                <path d="M50 15 L75 50 L50 85 L25 50 Z" class="rune-accent"/>
+                                
+                                <!-- 内部の複雑なGeboルーン -->
+                                <path d="M50 20 L50 80" class="rune-primary" stroke-width="4"/>
+                                <path d="M30 30 L70 30" class="rune-primary" stroke-width="3"/>
+                                <path d="M30 70 L70 70" class="rune-primary" stroke-width="3"/>
+                                
+                                <!-- 交差する斜線 -->
+                                <path d="M50 20 L30 30 M50 20 L70 30" class="rune-primary" stroke-width="3"/>
+                                <path d="M30 70 L50 80 M70 70 L50 80" class="rune-primary" stroke-width="3"/>
+                                
+                                <!-- 四方向への延長線 -->
+                                <path d="M50 5 L50 15 M85 50 L75 50 M50 95 L50 85 M15 50 L25 50" class="rune-secondary" stroke-width="2"/>
+                                
+                                <!-- 商取引の象徴 - 内部の複雑な幾何学模様 -->
+                                <path d="M35 35 L65 35 L65 65 L35 65 Z" class="rune-accent" stroke-width="1" fill="rgba(212, 175, 55, 0.1)"/>
+                                <path d="M42 42 L58 42 M42 58 L58 58" class="rune-secondary" stroke-width="2"/>
+                                
+                                <!-- 神聖な中心点と接続点 -->
+                                <circle cx="50" cy="50" r="4" class="mystical-dots"/>
+                                <circle cx="50" cy="20" r="2.5" class="mystical-dots"/>
+                                <circle cx="75" cy="50" r="2.5" class="mystical-dots"/>
+                                <circle cx="50" cy="80" r="2.5" class="mystical-dots"/>
+                                <circle cx="25" cy="50" r="2.5" class="mystical-dots"/>
+                                
+                                <!-- 細部の装飾線 -->
+                                <path d="M40 25 L60 25 M40 75 L60 75" class="rune-accent" stroke-width="1"/>
+                                <path d="M25 40 L25 60 M75 40 L75 60" class="rune-accent" stroke-width="1"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="company-text">
+                        <div class="company-name-intricate large">Skírnir</div>
+                        <div class="tagline-intricate large">E-Commerce Specialist</div>
+                    </div>
+                </div>
+                <div class="decorative-elements">
+                    <div class="corner-ornament top-left"></div>
+                    <div class="corner-ornament top-right"></div>
+                    <div class="corner-ornament bottom-left"></div>
+                    <div class="corner-ornament bottom-right"></div>
+                </div>
+            </div>
+
+            <!-- 緻密な垂直レイアウト -->
+            <div class="variant-card">
+                <div class="variant-title">緻密な垂直レイアウト - Premium Edition</div>
+                <div class="logo-display vertical">
+                    <div class="intricate-emblem">
+                        <div class="breathing-glow"></div>
+                        <div class="nordic-pattern">
+                            <div class="pattern-element" style="top: 8%; left: 45%;">※</div>
+                            <div class="pattern-element" style="top: 30%; right: 8%;">※</div>
+                            <div class="pattern-element" style="bottom: 30%; right: 45%;">※</div>
+                            <div class="pattern-element" style="bottom: 8%; left: 8%;">※</div>
+                        </div>
+                        <div class="commerce-symbols">
+                            <div class="commerce-element">⚡</div>
+                            <div class="commerce-element">⚪</div>
+                            <div class="commerce-element">◇</div>
+                            <div class="commerce-element">✧</div>
+                            <div class="commerce-element">⬟</div>
+                        </div>
+                        <div class="ornate-ring"></div>
+                        <div class="inner-ornate-ring"></div>
+                        <div class="detail-ring"></div>
+                        <div class="complex-rune">
+                            <svg viewBox="0 0 100 100" style="width: 100%; height: 100%;">
+                                <!-- 外側の菱形フレーム（水平レイアウトと同じ） -->
+                                <path d="M50 5 L85 50 L50 95 L15 50 Z" class="rune-secondary" stroke-width="3"/>
+                                <path d="M50 15 L75 50 L50 85 L25 50 Z" class="rune-accent"/>
+                                
+                                <!-- 内部の複雑なGeboルーン（水平レイアウトと同じ） -->
+                                <path d="M50 20 L50 80" class="rune-primary" stroke-width="4"/>
+                                <path d="M30 30 L70 30" class="rune-primary" stroke-width="3"/>
+                                <path d="M30 70 L70 70" class="rune-primary" stroke-width="3"/>
+                                
+                                <!-- 交差する斜線 -->
+                                <path d="M50 20 L30 30 M50 20 L70 30" class="rune-primary" stroke-width="3"/>
+                                <path d="M30 70 L50 80 M70 70 L50 80" class="rune-primary" stroke-width="3"/>
+                                
+                                <!-- 四方向への延長線 -->
+                                <path d="M50 5 L50 15 M85 50 L75 50 M50 95 L50 85 M15 50 L25 50" class="rune-secondary" stroke-width="2"/>
+                                
+                                <!-- 商取引の象徴 - 内部の複雑な幾何学模様 -->
+                                <path d="M35 35 L65 35 L65 65 L35 65 Z" class="rune-accent" stroke-width="1" fill="rgba(212, 175, 55, 0.1)"/>
+                                <path d="M42 42 L58 42 M42 58 L58 58" class="rune-secondary" stroke-width="2"/>
+                                
+                                <!-- 神聖な中心点と接続点 -->
+                                <circle cx="50" cy="50" r="4" class="mystical-dots"/>
+                                <circle cx="50" cy="20" r="2.5" class="mystical-dots"/>
+                                <circle cx="75" cy="50" r="2.5" class="mystical-dots"/>
+                                <circle cx="50" cy="80" r="2.5" class="mystical-dots"/>
+                                <circle cx="25" cy="50" r="2.5" class="mystical-dots"/>
+                                
+                                <!-- 細部の装飾線 -->
+                                <path d="M40 25 L60 25 M40 75 L60 75" class="rune-accent" stroke-width="1"/>
+                                <path d="M25 40 L25 60 M75 40 L75 60" class="rune-accent" stroke-width="1"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="company-text center">
+                        <div class="company-name-intricate">Skírnir</div>
+                        <div class="tagline-intricate">E-Commerce Specialist</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 緻密なアイコン専用版 -->
+            <div class="variant-card">
+                <div class="variant-title">緻密なアイコン専用 - Signature Edition</div>
+                <div class="logo-display">
+                    <div class="intricate-emblem large">
+                        <div class="breathing-glow"></div>
+                        <div class="nordic-pattern">
+                            <div class="pattern-element" style="top: 5%; left: 45%;">⟡</div>
+                            <div class="pattern-element" style="top: 25%; right: 5%;">⟡</div>
+                            <div class="pattern-element" style="bottom: 25%; right: 45%;">⟡</div>
+                            <div class="pattern-element" style="bottom: 5%; left: 5%;">⟡</div>
+                            <div class="pattern-element" style="top: 50%; left: 2%;">⟡</div>
+                            <div class="pattern-element" style="top: 50%; right: 2%;">⟡</div>
+                            <div class="pattern-element" style="top: 2%; left: 50%;">⟡</div>
+                            <div class="pattern-element" style="bottom: 2%; left: 50%;">⟡</div>
+                        </div>
+                        <div class="commerce-symbols">
+                            <div class="commerce-element">⚖</div>
+                            <div class="commerce-element">⚜</div>
+                            <div class="commerce-element">◈</div>
+                            <div class="commerce-element">⚛</div>
+                            <div class="commerce-element">✦</div>
+                        </div>
+                        <div class="ornate-ring"></div>
+                        <div class="inner-ornate-ring"></div>
+                        <div class="detail-ring"></div>
+                        <div class="complex-rune">
+                            <svg viewBox="0 0 100 100" style="width: 100%; height: 100%;">
+                                <!-- 外側の菱形フレーム（水平レイアウトと同じ） -->
+                                <path d="M50 5 L85 50 L50 95 L15 50 Z" class="rune-secondary" stroke-width="3"/>
+                                <path d="M50 15 L75 50 L50 85 L25 50 Z" class="rune-accent"/>
+                                
+                                <!-- 内部の複雑なGeboルーン（水平レイアウトと同じ） -->
+                                <path d="M50 20 L50 80" class="rune-primary" stroke-width="4"/>
+                                <path d="M30 30 L70 30" class="rune-primary" stroke-width="3"/>
+                                <path d="M30 70 L70 70" class="rune-primary" stroke-width="3"/>
+                                
+                                <!-- 交差する斜線 -->
+                                <path d="M50 20 L30 30 M50 20 L70 30" class="rune-primary" stroke-width="3"/>
+                                <path d="M30 70 L50 80 M70 70 L50 80" class="rune-primary" stroke-width="3"/>
+                                
+                                <!-- 四方向への延長線 -->
+                                <path d="M50 5 L50 15 M85 50 L75 50 M50 95 L50 85 M15 50 L25 50" class="rune-secondary" stroke-width="2"/>
+                                
+                                <!-- 商取引の象徴 - 内部の複雑な幾何学模様 -->
+                                <path d="M35 35 L65 35 L65 65 L35 65 Z" class="rune-accent" stroke-width="1" fill="rgba(212, 175, 55, 0.1)"/>
+                                <path d="M42 42 L58 42 M42 58 L58 58" class="rune-secondary" stroke-width="2"/>
+                                
+                                <!-- 神聖な中心点と接続点 -->
+                                <circle cx="50" cy="50" r="4" class="mystical-dots"/>
+                                <circle cx="50" cy="20" r="2.5" class="mystical-dots"/>
+                                <circle cx="75" cy="50" r="2.5" class="mystical-dots"/>
+                                <circle cx="50" cy="80" r="2.5" class="mystical-dots"/>
+                                <circle cx="25" cy="50" r="2.5" class="mystical-dots"/>
+                                
+                                <!-- 細部の装飾線 -->
+                                <path d="M40 25 L60 25 M40 75 L60 75" class="rune-accent" stroke-width="1"/>
+                                <path d="M25 40 L25 60 M75 40 L75 60" class="rune-accent" stroke-width="1"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
