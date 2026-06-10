@@ -1,0 +1,3 @@
+# SPA フォールバック (react-router)
+# Cloudflare Pages で未マッチのパスを index.html に 200 で返す
+/*    /index.html   200
