@@ -1,6 +1,6 @@
 import { expect, test } from '@playwright/test';
 
-test('homepage has Playwright in title and get started link linking to the intro page', async ({ page }) => {
+test('homepage has title and navigation works across pages', async ({ page }) => {
   await page.goto('/');
 
   await expect(page).toHaveTitle(/Skirnir Inc\./);
@@ -8,20 +8,22 @@ test('homepage has Playwright in title and get started link linking to the intro
 
   // Click text=About
   await page.locator('text=About').click();
-  await expect(page).toHaveURL('/#/about');
+  await expect(page).toHaveURL(/\/about\/?$/);
   await expect(page.locator('p >> nth=1')).toContainText('〒543-0033 大阪市天王寺区堂ケ芝1-11-18 8F');
   await expect(page.locator('p >> nth=3')).toContainText('ohkouchi@skirnir.co.jp');
 
   // Click text=Services
   await page.locator('text=Services').click();
-  await expect(page).toHaveURL('/#/services');
+  await expect(page).toHaveURL(/\/services\/?$/);
   await expect(page.locator('p >> nth=0')).toContainText(/ネットショップ/);
+
   // Click text=Contact
   await page.locator('text=Contact').click();
-  await expect(page).toHaveURL('/#/contact');
-    await expect(page.locator('p >> nth=0')).toContainText(/ご連絡/);
+  await expect(page).toHaveURL(/\/contact\/?$/);
+  await expect(page.locator('p >> nth=0')).toContainText(/ご連絡/);
+
   // Click text=Tradelaw
   await page.locator('text=Tradelaw').click();
-  await expect(page).toHaveURL('/#/tradelaw');
+  await expect(page).toHaveURL(/\/tradelaw\/?$/);
   await expect(page.locator('h1')).toContainText(/特定商取引に基づく表記/);
 });
