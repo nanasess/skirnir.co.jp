@@ -19,6 +19,10 @@ const navItems = [
 const current = Astro.url.pathname;
 const isActive = (href: string) =>
   href === '/' ? current === '/' : current.startsWith(href);
+
+// 正規 URL は常に apex (https://skirnir.co.jp) を指す。
+// www やプレビュー (*.pages.dev) で配信された場合のコピーコンテンツ対策。
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 ---
 
 <!doctype html>
@@ -27,6 +31,7 @@ const isActive = (href: string) =>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="theme-color" content="#000000" />
+    <link rel="canonical" href={canonicalURL} />
     <link rel="manifest" href="/manifest.json" />
     <link rel="shortcut icon" href="/favicon.ico" />
     <title>{title}</title>
