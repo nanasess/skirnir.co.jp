@@ -1,0 +1,75 @@
+---
+import 'bootstrap/dist/css/bootstrap.min.css';
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+}
+
+const { title = 'Skirnir Inc.' } = Astro.props;
+
+const navItems = [
+  { href: '/', label: 'Home' },
+  { href: '/about/', label: 'About' },
+  { href: '/services/', label: 'Services' },
+  { href: '/contact/', label: 'Contact' },
+  { href: '/tradelaw/', label: 'Tradelaw' },
+];
+
+const current = Astro.url.pathname;
+const isActive = (href: string) =>
+  href === '/' ? current === '/' : current.startsWith(href);
+---
+
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="theme-color" content="#000000" />
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <title>{title}</title>
+  </head>
+  <body>
+    <slot />
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-bottom">
+      <div class="container">
+        <a class="navbar-brand" href="/">スキルニル株式会社</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+          data-nav-toggle
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarResponsive" data-nav-menu>
+          <ul class="navbar-nav ml-auto">
+            {
+              navItems.map((item) => (
+                <li class="nav-item">
+                  <a class:list={['nav-link', { active: isActive(item.href) }]} href={item.href}>
+                    {item.label}
+                  </a>
+                </li>
+              ))
+            }
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <script>
+      const toggle = document.querySelector('[data-nav-toggle]');
+      const menu = document.querySelector('[data-nav-menu]');
+      toggle?.addEventListener('click', () => {
+        const isOpen = menu?.classList.toggle('show');
+        toggle.setAttribute('aria-expanded', String(Boolean(isOpen)));
+      });
+    </script>
+  </body>
+</html>
