@@ -4,7 +4,7 @@
   "private": true,
   "type": "module",
   "dependencies": {
-    "astro": "^6.4.7",
+    "astro": "^7.0.0",
     "bootstrap": "^5.3.3"
   },
   "devDependencies": {
