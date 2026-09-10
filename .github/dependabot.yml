@@ -1,7 +1,12 @@
-# To get started with Dependabot version updates, you'll need to specify which
-# package ecosystems to update and where the package manifests are located.
-# Please see the documentation for all configuration options:
-# https://docs.github.com/github/administering-a-repository/configuration-options-for-dependency-updates
+# Dependabot の設定。全オプションは以下を参照:
+# https://docs.github.com/code-security/reference/supply-chain-security/dependabot-options-reference
+#
+# グループ化の方針:
+#   pnpm-lock.yaml を書き換える PR が同時に複数開いていると、マージ時に
+#   git の 3-way マージが同じエントリを二重に残すことがある。実際に #309 と
+#   #310 の相乗りで `@ungap/structured-clone` が重複し、Dependabot 自体が
+#   `/pnpm-lock.yaml not parseable` で 2 ヶ月以上停止した (#314)。
+#   ロックファイルに触れる PR は極力 1 本に集約する。
 
 version: 2
 updates:
@@ -9,8 +14,35 @@ updates:
     directory: "/"
     schedule:
       interval: "weekly"
+    groups:
+      # Actions はメジャーも含めてまとめて 1 PR にする
+      github-actions:
+        applies-to: version-updates
+        patterns:
+          - "*"
+      github-actions-security:
+        applies-to: security-updates
+        patterns:
+          - "*"
 
   - package-ecosystem: "npm"
     directory: "/"
     schedule:
       interval: "weekly"
+    groups:
+      # minor / patch は 1 PR に集約する。今回の事故もこの組み合わせ
+      # (astro 7.0.3 と @playwright/test 1.61.1) で起きた
+      npm-minor-patch:
+        applies-to: version-updates
+        patterns:
+          - "*"
+        update-types:
+          - "minor"
+          - "patch"
+      # セキュリティ更新は既定では 1 依存 = 1 PR になるため明示的にまとめる
+      npm-security:
+        applies-to: security-updates
+        patterns:
+          - "*"
+      # メジャー更新はグループに含めない。astro / typescript のように
+      # 破壊的変更を伴うものは個別 PR で e2e の結果を切り分けたい
